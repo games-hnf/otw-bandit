@@ -11,3 +11,21 @@ ssh
 ## Helpful Reading Material
 [Secure Shell (SSH) on Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)  
 [How to use SSH on wikiHow](https://www.wikihow.com/Use-SSH)
+
+## Solution
+This level teaches us the basic usage of the **ssh** command.
+When we are given the **username**, **hostname**, and **port-number**, we can connect to a remote machine using one of the following commands:
+```bash
+ssh [username]@[hostname] -p [port-number]
+ssh ssh://[username]@[hostname]:[port-number]
+```
+After executing the command, we enter the provided password when prompted.
+Once logged in, we can proceed to Level 1 by checking the contents of the home directory:
+```bash
+ls -la
+```
+There, we will find a file named **readme**, which contains the password for the next level.
+
+## Summary
+- **ssh** command learned.
+- Found **readme** file and got password for next level.
