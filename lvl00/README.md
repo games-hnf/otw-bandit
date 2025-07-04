@@ -25,6 +25,9 @@ Once logged in, we can proceed to Level 1 by checking the contents of the home d
 ls -la
 ```
 There, we will find a file named **readme**, which contains the password for the next level.
+```bash
+cat readme
+```
 
 ## Summary
 - **ssh** command learned.
