@@ -14,12 +14,13 @@ ssh
 
 ## Solution
 This level teaches us the basic usage of the **ssh** command.
-When we are given the **username**, **hostname**, and **port-number**, we can connect to a remote machine using one of the following commands:
+When provided with a **username**, **hostname**, and **port-number**, we can connect to the remote server using one of the following commands:
 ```bash
 ssh [username]@[hostname] -p [port-number]
 ssh ssh://[username]@[hostname]:[port-number]
 ```
-After executing the command, we enter the provided password **bandit0** when prompted.
+After running the command, we enter the provided password **bandit0** when prompted.
 
 ## Summary
-- Learned two ways to execute **ssh** command to connect to the remote server.
+- Learned two ways to use the **ssh** command to connect to a remote server.
+- Successfully logged into the Bandit sever for the first time.
