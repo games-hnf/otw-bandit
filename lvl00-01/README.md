@@ -10,7 +10,7 @@ ls, cd, cat, file, du, find
 ## TIP
 Create a file for notes and passwords on your local machine!
 
-Passwords for levels are not saved automatically. If you do not save them yourself, you will need to start over from bandit0.
+Passwords for levels are *not* saved automatically. If you do not save them yourself, you will need to start over from bandit0.
 
 Passwords also occasionally change.
 It is recommended to take notes on how to solve each challenge.
