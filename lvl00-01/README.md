@@ -5,7 +5,7 @@ Use this password to log into bandit1 using SSH.
 Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
 ## Commands you may need to solve this level
-ls ,cd ,cat ,file ,du ,find
+ls, cd, cat, file, du, find
 
 ## TIP
 Create a file for notes and passwords on your local machine!  
