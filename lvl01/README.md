@@ -19,7 +19,16 @@ When we are given the **username**, **hostname**, and **port-number**, we can co
 ssh [username]@[hostname] -p [port-number]
 ssh ssh://[username]@[hostname]:[port-number]
 ```
-After executing the command, we enter the provided password **bandit0** when prompted.
+After executing the command, we enter the provided password when prompted.
+Once logged in, we can proceed to Level 1 by checking the contents of the home directory:
+```bash
+ls -la
+```
+There, we will find and read a file named **readme**, which contains the password for the next level.
+```bash
+cat readme
+```
 
 ## Summary
-- Learned two ways to execute **ssh** command to connect to the remote server.
+- **ssh** command learned.
+- Found **readme** file and got password for next level.
