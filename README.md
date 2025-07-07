@@ -1,5 +1,5 @@
 # OverTheWire: Bandit Walkthrough
-**🐺 FortySevenWarrior**
+**🐘 47Guardian**
 
 This repository contains my personal writeups and solutions for all levels of the [Bandit wargame](https://overthewire.org/wargames/bandit/) on *OverTheWire*.
 
