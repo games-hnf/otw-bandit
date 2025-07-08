@@ -5,7 +5,7 @@ Use this password to log into bandit1 using SSH.
 Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
 ## Commands you may need to solve this level
-ls, cd, cat, file, du, find
+`ls`, `cd`, `cat`, `file`, `du`, `find`
 
 ## TIP
 Create a file for notes and passwords on your local machine!
@@ -41,5 +41,6 @@ alias lst='(ls -lah --group-directories-first)'
 ```
 
 ## Summary
-- Learned `ls` command and add a personalized alias in the **.bashrc** file.
+- Learned how to use the `ls` command.
+- Created a personalized alias in the **.bashrc** file.
 - Found **readme** file and got password for next level.
