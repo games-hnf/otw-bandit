@@ -35,7 +35,7 @@ ls -lah --group-directories-first
 - `-h`: displays sizes in a human-readable format
 - `--group-directories-first`: shows directories before files
 
-And I personally add this command as an alias to **.bashrc** in my local machine.
+And I personally added this command as an alias to my .bashrc file on my local machine.
 ```bash
 alias lst='(ls -lah --group-directories-first)'
 ```
