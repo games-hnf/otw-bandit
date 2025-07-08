@@ -34,6 +34,7 @@ ls -lah --group-directories-first
 - `-a`: shows all files, including hidden ones
 - `-h`: displays sizes in a human-readable format
 - `--group-directories-first`: shows directories before files
+
 And I personally add this command as an alias in my **.bashrc** file.
 ```bash
 alias lst='(ls -lah --group-directories-first)'
