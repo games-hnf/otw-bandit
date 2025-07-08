@@ -10,27 +10,17 @@ The password for the next level is stored in a file called **-** located in the 
 [Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://linux.die.net/abs-guide/special-chars.html)
 
 ## Solution
-This level teaches the basic usage of the `ls` command.  
-Once logged in using username **bandit0** and password **bandit0**, we check the contents of the home directory using:
+We learned how to deal with a file with a dashed filename.
+More precisely, once logged in using the obtained password from previous level, we check the contents of the home directory by:
 ```bash
-ls
+ll
 ```
-There, we will find and read a file named **readme**, which contains the password for the next level.
+We then see a file named **-**.
+We cannot `cat -` directly, because the Linux kernel will understand that we wanted to use `cat` command with some flag, but is still missing.
+In short, we solve this problem by calling this file by `./-`, where `.` means the current directory.
+We then read the content of the file **-** and receive the password for next level:
 ```bash
-cat readme
-```
-Personally, I prefer to use the `ls` command with some additional flags:
-```bash
-ls -lah --group-directories-first
-```
-- `-l`: lists contents in long format
-- `-a`: shows all files, including hidden ones
-- `-h`: displays sizes in a human-readable format
-- `--group-directories-first`: shows directories before files
-
-And I personally added this command as an alias to my .bashrc file on my local machine.
-```bash
-alias lst='(ls -lah --group-directories-first)'
+cat ./-
 ```
 
 ## Summary
