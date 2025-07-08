@@ -17,21 +17,23 @@ It is recommended to take notes on how to solve each challenge.
 As levels get more challenging, detailed notes are useful to return to where you left off, reference for later problems, or help others after you’ve completed the challenge.
 
 ## Solution
-This level teaches us the basic usage of the **ssh** command.
-When we are given the **username**, **hostname**, and **port-number**, we can connect to a remote machine using one of the following commands:
+This level teaches the basic usage of `ls` command.  
+Once logged in using username **bandit0** and password **bandit0**, we check the contents of the home directory:
 ```bash
-ssh [username]@[hostname] -p [port-number]
-ssh ssh://[username]@[hostname]:[port-number]
-```
-After executing the command, we enter the provided password when prompted.
-Once logged in, we can proceed to Level 1 by checking the contents of the home directory:
-```bash
-ls -la
+ls
 ```
 There, we will find and read a file named **readme**, which contains the password for the next level.
 ```bash
 cat readme
 ```
+Personally, I prefer to use the `ls` command with some additional tags:
+```bash
+ls -lah --group-directories-first
+```
+- `-l`: listing the contents in long format
+- `-a`: listing all the files, even the hidden ones
+- `-h`: showing in the human-readable format
+- `--group-directories-first`: show directories first, and then files
 
 ## Summary
 - **ssh** command learned.
