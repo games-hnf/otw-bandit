@@ -17,8 +17,8 @@ It is recommended to take notes on how to solve each challenge.
 As levels get more challenging, detailed notes are useful to return to where you left off, reference for later problems, or help others after you’ve completed the challenge.
 
 ## Solution
-This level teaches the basic usage of `ls` command.  
-Once logged in using username **bandit0** and password **bandit0**, we check the contents of the home directory:
+This level teaches the basic usage of the `ls` command.  
+Once logged in using username **bandit0** and password **bandit0**, we check the contents of the home directory using:
 ```bash
 ls
 ```
@@ -26,15 +26,19 @@ There, we will find and read a file named **readme**, which contains the passwor
 ```bash
 cat readme
 ```
-Personally, I prefer to use the `ls` command with some additional tags:
+Personally, I prefer to use the `ls` command with some additional flags:
 ```bash
 ls -lah --group-directories-first
 ```
-- `-l`: listing the contents in long format
-- `-a`: listing all the files, even the hidden ones
-- `-h`: showing in the human-readable format
-- `--group-directories-first`: show directories first, and then files
+- `-l`: lists contents in long format
+- `-a`: shows all files, including hidden ones
+- `-h`: displays sizes in a human-readable format
+- `--group-directories-first`: shows directories before files
+And I personally add this command as an alias in my **.bashrc** file.
+```bash
+alias lst='(ls -lah --group-directories-first)'
+```
 
 ## Summary
-- **ssh** command learned.
+- Learned `ls` command and add a personalized alias in the **.bashrc** file.
 - Found **readme** file and got password for next level.

@@ -6,14 +6,14 @@ The username is **bandit0** and the password is **bandit0**.
 Once logged in, go to the Level 1 page to find out how to beat Level 1.
 
 ## Commands you may need to solve this level
-ssh
+`ssh`
 
 ## Helpful Reading Material
 [Secure Shell (SSH) on Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell)  
 [How to use SSH on wikiHow](https://www.wikihow.com/Use-SSH)
 
 ## Solution
-This level teaches us the basic usage of the **ssh** command.
+This level teaches us the basic usage of the `ssh` command.
 When provided with a **username**, **hostname**, and **port-number**, we can connect to the remote server using one of the following commands:
 ```bash
 ssh [username]@[hostname] -p [port-number]
