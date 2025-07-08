@@ -10,20 +10,19 @@ The password for the next level is stored in a file called **-** located in the 
 [Advanced Bash-scripting Guide - Chapter 3 - Special Characters](https://linux.die.net/abs-guide/special-chars.html)
 
 ## Solution
-We learned how to deal with a file with a dashed filename.
-More precisely, once logged in using the obtained password from previous level, we check the contents of the home directory by:
+We learned how to deal with a file that has a dashed filename.
+More precisely, once logged in using the password obtained from the previous level, we check the contents of the home directory with:
 ```bash
 ll
 ```
 We then see a file named **-**.
-We cannot `cat -` directly, because the Linux kernel will understand that we wanted to use `cat` command with some flag, but is still missing.
-In short, we solve this problem by calling this file by `./-`, where `.` means the current directory.
-We then read the content of the file **-** and receive the password for next level:
+We cannot simply run `cat -`, because the Linux kernel interprets the dash `-` as a flag, which in this case is incomplete or invalid.
+To solve this, we reference the file explicitly using `./-`, where `.` refers to the current directory.
+We then read the contents of the file and retrieve the password for the next level:
 ```bash
 cat ./-
 ```
 
 ## Summary
-- Learned how to use the `ls` command.
-- Created a personalized alias in the **.bashrc** file.
-- Found **readme** file and got password for next level.
+- Learned how to work with files that have dashed filenames.
+- Found the password for the next level.
