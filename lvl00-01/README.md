@@ -26,7 +26,12 @@ There, we will find and read a file named **readme**, which contains the passwor
 ```bash
 cat readme
 ```
-Personally, I prefer to use the `ls` command with some additional flags:
+This part is not strictly necessary, but if we check the **.bashrc** file, we will see the following line:
+```bash
+alias ll='ls -alF'
+```
+So for me, from now on, I find it better to use `ll` instead of `ls`, since it provides much more useful information than the basic `ls` command.
+Personally, I in fact prefer to use the `ls` command with the following additional flags:
 ```bash
 ls -lah --group-directories-first
 ```
@@ -35,12 +40,13 @@ ls -lah --group-directories-first
 - `-h`: displays sizes in a human-readable format
 - `--group-directories-first`: shows directories before files
 
-And I personally added this command as an alias to my .bashrc file on my local machine.
+And I personally added this command as an alias to my **.bashrc** file on my local machine.
 ```bash
 alias lst='(ls -lah --group-directories-first)'
 ```
 
 ## Summary
 - Learned how to use the `ls` command.
+- Found **.bashrc** file and an alias `ll`.
 - Created a personalized alias in the **.bashrc** file.
 - Found **readme** file and got password for next level.
