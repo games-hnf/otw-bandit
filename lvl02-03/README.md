@@ -9,20 +9,25 @@ The password for the next level is stored in a file called **spaces in this file
 [Google Search for "spaces in filename"](https://www.google.com/search?q=spaces+in+filename)
 
 ## Solution
-We learned how to deal with a file that spaces in the filename.
-We log in and check the contents of the home directory by:
+We learned how to handle a file with spaces in its filename.
+After logging in, we check the contents of the home directory using:
 ```bash
 ll
 ```
-We then see a file called **spaces in this filename**.
-As the previous level, we run `cat` command to read the content of this file.
-However, since there are spaces in the filename, we deal with that using one of the following commands:
+We then find a file named **spaces in this filename**.
+As the previous level, we use the `cat` command to read the file's contents.
+However, because the filename contains spaces, we must handle it using one of the following methods:
 ```bash
 cat 'spaces in this filename'
 cat spaces\ in\ this\ filename
 ```
-We then obtain the password for the next level.
+Personally, I prefer to use the method with single quotes, for instance:
+```bash
+cat 'spaces in this filename'
+```
+Doing this allows us to read the file and obtain the password for the next level.
+
 
 ## Summary
-- Learned how to work with files that have spaces.
+- Learned how to work with filenames that contain spaces.
 - Found the password for the next level.
