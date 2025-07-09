@@ -5,5 +5,5 @@
 # Step 1: check the contents of the $HOME directory
 ll
 
-# Step 2: read the '-' file, which is a file that has dashed filename
-cat ./-
+# Step 2: read the file 'spaces in this filename'
+cat 'spaces in this filename'
