@@ -1,4 +1,4 @@
-# Bandit Level 2 → Level 3
+# Bandit Level 3 → Level 4
 ## Level Goal
 The password for the next level is stored in a hidden file in the **inhere** directory.
 
@@ -6,25 +6,51 @@ The password for the next level is stored in a hidden file in the **inhere** dir
 `ls`, `cd`, `cat`, `file`, `du`, `find`
 
 ## Solution
-We learned how to handle a file with spaces in its filename.
-After logging in, we check the contents of the home directory using:
+We learn to use the `ls` command with some additional flags to handle the hidden files and directories.
+Precisely, after logging in, we run the `ls` command as usual:
 ```bash
-ll
+ls
 ```
-We then find a file named **spaces in this filename**.
-As the previous level, we use the `cat` command to read the file's contents.
-However, because the filename contains spaces, we must handle it using one of the following methods:
+We see a directory named **inhere**, then we move to this directory:
 ```bash
-cat 'spaces in this filename'
-cat spaces\ in\ this\ filename
+cd inhere
 ```
-Personally, I prefer to use the method with single quotes, for instance:
+Next, a natural move is to check the contents of the **inhere** directory by using:
 ```bash
-cat 'spaces in this filename'
+ls
 ```
-Doing this allows us to read the file and obtain the password for the next level.
+But if we simply run `ls`, we receive no result, obviously, because the contents in the **inhere** directory were hidden.
+We then need to use the `ls` command with some additional flags:
+```bash
+ls -la
+```
+- `-l`: lists contents in long format
+- `-a`: shows all files, including hidden ones
+We then see a file named **...Hiding-From-You**, and read the content of this file by simply running:
+```bash
+cat ...Hiding-From-You
+```
+Then, we obtain the password for the next level.
 
+This part is not strictly necessary, but if we check the **.bashrc** file in the `$HOME` directory, we will see the following line:
+```bash
+alias ll='ls -alF'
+```
+So for me, from now on, I find it better to use `ll` instead of `ls`, since it provides much more useful information than the basic `ls` command.
+Personally, I in fact prefer to use the `ls` command with the following additional flags:
+```bash
+ls -lah --group-directories-first
+```
+- `-h`: displays sizes in a human-readable format
+- `--group-directories-first`: shows directories before files
+
+And I personally added this command as an alias to my **.bashrc** file on my local machine.
+```bash
+alias lst='(ls -lah --group-directories-first)'
+```
 
 ## Summary
-- Learned how to work with filenames that contain spaces.
+- Learned how to use the `ls` command.
+- Found **.bashrc** file and an alias `ll`.
+- Created a personalized alias in the **.bashrc** file.
 - Found the password for the next level.
