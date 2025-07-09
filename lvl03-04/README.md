@@ -32,7 +32,7 @@ We then see a file named **...Hiding-From-You** and read its contents:
 cat ...Hiding-From-You
 ```
 This gives us the password for the next level.
-
+---
 This step isn't strictly necessary, but if we check the **.bashrc** file in the `$HOME` directory, we'll find this line:
 ```bash
 alias ll='ls -alF'
