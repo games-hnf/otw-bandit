@@ -26,6 +26,7 @@ ls -la
 ```
 - `-l`: lists contents in long format
 - `-a`: shows all files, including hidden ones
+
 We then see a file named **...Hiding-From-You** and read its contents:
 ```bash
 cat ...Hiding-From-You
@@ -43,6 +44,7 @@ ls -lah --group-directories-first
 ```
 - `-h`: displays sizes in a human-readable format
 - `--group-directories-first`: shows directories before files
+
 I've even added this command as a personal alias in my local machine's **.bashrc** file:
 ```bash
 alias lst='(ls -lah --group-directories-first)'
