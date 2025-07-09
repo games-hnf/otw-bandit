@@ -6,51 +6,50 @@ The password for the next level is stored in a hidden file in the **inhere** dir
 `ls`, `cd`, `cat`, `file`, `du`, `find`
 
 ## Solution
-We learn to use the `ls` command with some additional flags to handle the hidden files and directories.
-Precisely, after logging in, we run the `ls` command as usual:
+We learned how to use the `ls` command with additional flags to handle hidden files and directories.
+After logging in, we run the `ls` command as usual:
 ```bash
 ls
 ```
-We see a directory named **inhere**, then we move to this directory:
+We see a directory named **inhere**, so we move into it:
 ```bash
 cd inhere
 ```
-Next, a natural move is to check the contents of the **inhere** directory by using:
+Next, it's natural to check the contents of the **inhere** directory:
 ```bash
 ls
 ```
-But if we simply run `ls`, we receive no result, obviously, because the contents in the **inhere** directory were hidden.
-We then need to use the `ls` command with some additional flags:
+However, running `ls` alone returns no result - because the contents are hidden.
+To reveal them, we use the `ls` command with the `-l` and `-a` flags:
 ```bash
 ls -la
 ```
 - `-l`: lists contents in long format
 - `-a`: shows all files, including hidden ones
-We then see a file named **...Hiding-From-You**, and read the content of this file by simply running:
+We then see a file named **...Hiding-From-You** and read its contents:
 ```bash
 cat ...Hiding-From-You
 ```
-Then, we obtain the password for the next level.
+This gives us the password for the next level.
 
-This part is not strictly necessary, but if we check the **.bashrc** file in the `$HOME` directory, we will see the following line:
+This step isn't strictly necessary, but if we check the **.bashrc** file in the `$HOME` directory, we'll find this line:
 ```bash
 alias ll='ls -alF'
 ```
-So for me, from now on, I find it better to use `ll` instead of `ls`, since it provides much more useful information than the basic `ls` command.
-Personally, I in fact prefer to use the `ls` command with the following additional flags:
+So from now on, I personally find it better to use `ll` instead of `ls`, since it gives more useful information.
+I also prefer to use `ls` with the following extra flags:
 ```bash
 ls -lah --group-directories-first
 ```
 - `-h`: displays sizes in a human-readable format
 - `--group-directories-first`: shows directories before files
-
-And I personally added this command as an alias to my **.bashrc** file on my local machine.
+I've even added this command as a personal alias in my local machine's **.bashrc** file:
 ```bash
 alias lst='(ls -lah --group-directories-first)'
 ```
 
 ## Summary
-- Learned how to use the `ls` command.
-- Found **.bashrc** file and an alias `ll`.
-- Created a personalized alias in the **.bashrc** file.
+- Learned how to use the `ls` command with useful flags.
+- Discovered **.bashrc** and the alias `ll`.
+- Made a personalized alias in the local **.bashrc** file.
 - Found the password for the next level.
