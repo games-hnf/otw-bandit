@@ -27,7 +27,6 @@ cat 'spaces in this filename'
 ```
 Doing this allows us to read the file and obtain the password for the next level.
 
-
 ## Summary
 - Learned how to work with filenames that contain spaces.
 - Found the password for the next level.
