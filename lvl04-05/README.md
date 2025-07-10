@@ -7,36 +7,33 @@ Tip: if your terminal is messed up, try the "reset" command.
 `ls`, `cd`, `cat`, `file`, `du`, `find`
 
 ## Solution
-This level teaches us the mindset when working with a bunch of files.
-Moreover in this particular case, in these given files, there is only one file that has human-readable content, which is the password for the next level.
-And the objective is to detect which file contains this precious information, and withdraw it.
+This level teaches is the right mindset when dealing with a number of files.
+In this particular case, among the given files, only one contains human-readable content - the password for the next level.
+The objective is to identify the file that contains this valuable information and retrieve it.
+
 After logging in, we check the contents of the `$HOME` directory:
 ```bash
 ll
 ```
 We find a directory named **inhere**.
-We move into it and check its contents:
+We navigate into it and check its contents:
 ```bash
 cd inhere && ll
 ```
-We were using the struture `[command 1] && [command 2]` to be faster.
-This means after `[command 1]` completes, the system runs `[command 2]`.
-We have another structure `[command 1] & [command 2]`, which means the two commands run in parallel.
-The `[command 2]` will not wait until the `[command 1]` to be complete to run.
-Coming back to our solution, after checking the contents of the directory **inhere**, we have a bunch of files named: **-file00**, **-file01**, ..., **-file09**.
-The big lesson in this level is the `file` command.
-We use the `file` command to check the file type of these files:
+Here we use the struture `[command 1] && [command 2]` to execute commands efficiently.
+It means that `[command 2]` runs **only after** `[command 1]` completes successfully.
+There is also the `[command 1] & [command 2]` structure, where both commands run in **parallel** - `[command 2]` does **not** wait for `[command 1]` to finish.
+Back to the solution: after listing the contents of the **inhere** directory, we see a bunch of files named: **-file00**, **-file01**, ..., **-file09**.
+The key lesson in this level is the `file` command, which we use to determine the file types:
 ```bash
 file ./*
 ```
-Here we use the asterisk `*` to refer all the files in the current directory.
-However we cannot simply use `*`, but `./*`, since all the files contains `-`at the beginning.
-This is similar to what we have done in the level 1 → level 2.
-After running the `file` command, we can see that only **-file07** is the **ASCII text**, which means its content is human-readable and is the password for the next level.
-We read the content of **-file07** by using:
+We use `*` to refer all files in the current directory, and `./*` (instead of just `*`) because all the filenames start with a dash `-`.
+This is similar to what we did in the previous level (Level 1 → Level 2).
+After running the `file` command, we find that only **-file07** is an **ASCII text** file, which means its content is human-readable and contains the password for the next level.
+We read it using:
 ```bash
 cat ./-file07
 ```
-
 
 ## Summary
