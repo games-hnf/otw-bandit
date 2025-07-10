@@ -39,3 +39,7 @@ cat ./-file07
 ```
 
 ## Summary
+- Learned the `file` command, which gives precious information about the files
+- Learned and tried using `[command 1] && [command 2]` and `[command 1] & [command 2]`
+- Reviewed the lesson of dealing with dashed filenames
+- Found the password for the next level
