@@ -23,6 +23,7 @@ cd inhere && ll
 Here we use the struture `[command 1] && [command 2]` to execute commands efficiently.
 It means that `[command 2]` runs **only after** `[command 1]` completes successfully.
 There is also the `[command 1] & [command 2]` structure, where both commands run in **parallel** - `[command 2]` does **not** wait for `[command 1]` to finish.
+
 Back to the solution: after listing the contents of the **inhere** directory, we see a bunch of files named: **-file00**, **-file01**, ..., **-file09**.
 The key lesson in this level is the `file` command, which we use to determine the file types:
 ```bash
@@ -30,6 +31,7 @@ file ./*
 ```
 We use `*` to refer all files in the current directory, and `./*` (instead of just `*`) because all the filenames start with a dash `-`.
 This is similar to what we did in the previous level (Level 1 → Level 2).
+
 After running the `file` command, we find that only **-file07** is an **ASCII text** file, which means its content is human-readable and contains the password for the next level.
 We read it using:
 ```bash
