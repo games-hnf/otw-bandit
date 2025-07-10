@@ -9,39 +9,34 @@ The password for the next level is stored in a file somewhere under the **inhere
 `ls`, `cd`, `cat`, `file`, `du`, `find`
 
 ## Solution
-This level teaches is the right mindset when dealing with a number of files.
-In this particular case, among the given files, only one contains human-readable content - the password for the next level.
-The objective is to identify the file that contains this valuable information and retrieve it.
+This level teaches us the basic usage of the `find` command.
 
-After logging in, we check the contents of the `$HOME` directory:
-```bash
-ll
-```
-We find a directory named **inhere**.
+We log in by using the `ssh` command and check the contents of the `$HOME`directory by the `ll` command.
+We then found the **inhere** directory.
 We navigate into it and check its contents:
 ```bash
 cd inhere && ll
 ```
-Here we use the struture `[command 1] && [command 2]` to execute commands efficiently.
-It means that `[command 2]` runs **only after** `[command 1]` completes successfully.
-There is also the `[command 1] & [command 2]` structure, where both commands run in **parallel** - `[command 2]` does **not** wait for `[command 1]` to finish.
-
-Back to the solution: after listing the contents of the **inhere** directory, we see a bunch of files named: **-file00**, **-file01**, ..., **-file09**.
-The key lesson in this level is the `file` command, which we use to determine the file types:
+Here we see 20 directories named **maybehere00**, **maybehere01**, ..., **maybehere19**.
+And in each directory, we have a bunch of files, and only one among them contains the password for the next level.
+Our objective now is to find the particular file which satisfies all three given conditions: human-readable, 1033 bytes in size and not executable.
+The key lesson is to use `find` command with the `-size` flag as our ultimate weapon to identify the important file.
 ```bash
-file ./*
+find [directory] -size [size]
+find . -size 1033c
 ```
-We use `*` to refer all files in the current directory, and `./*` (instead of just `*`) because all the filenames start with a dash `-`.
-This is similar to what we did in the previous level (Level 1 → Level 2).
-
-After running the `file` command, we find that only **-file07** is an **ASCII text** file, which means its content is human-readable and contains the password for the next level.
-We read it using:
+This line means we ask the system to find in the whole current directory (the **inhere** directory) the file that is 1033 bytes in size.
+The result we receive is `./maybehere07/.file2`.
+We can verify by using:
 ```bash
-cat ./-file07
+ll ./maybehere07/.file2
+```
+We then see that this file is not executable and is exactly 1033 bytes in size.
+We read its content and obtain the password for the next level.
+```bash
+cat ./maybehere07/.file2
 ```
 
 ## Summary
-- Learned the `file` command, which provides useful information about file types
-- Learned and practiced using `[command 1] && [command 2]` and `[command 1] & [command 2]`
-- Reviewed the concept of handling filenames that begin with a dash
+- Learned the `find` command, which is extremely powerful
 - Found the password for the next level
