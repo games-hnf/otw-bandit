@@ -1,59 +1,42 @@
 # Bandit Level 4 → Level 5
 ## Level Goal
 The password for the next level is stored in the only human-readable file in the **inhere** directory.
-Tip: if your terminal is messed up, try the “reset” command.
+Tip: if your terminal is messed up, try the "reset" command.
 
 ## Commands you may need to solve this level
 `ls`, `cd`, `cat`, `file`, `du`, `find`
 
 ## Solution
-We learned how to use the `ls` command with additional flags to handle hidden files and directories.
-After logging in, we run the `ls` command as usual:
+This level teaches us the mindset when working with a bunch of files.
+Moreover in this particular case, in these given files, there is only one file that has human-readable content, which is the password for the next level.
+And the objective is to detect which file contains this precious information, and withdraw it.
+After logging in, we check the contents of the `$HOME` directory:
 ```bash
-ls
+ll
 ```
-We see a directory named **inhere**, so we move into it:
+We find a directory named **inhere**.
+We move into it and check its contents:
 ```bash
-cd inhere
+cd inhere && ll
 ```
-Next, it's natural to check the contents of the **inhere** directory:
+We were using the struture `[command 1] && [command 2]` to be faster.
+This means after `[command 1]` completes, the system runs `[command 2]`.
+We have another structure `[command 1] & [command 2]`, which means the two commands run in parallel.
+The `[command 2]` will not wait until the `[command 1]` to be complete to run.
+Coming back to our solution, after checking the contents of the directory **inhere**, we have a bunch of files named: **-file00**, **-file01**, ..., **-file09**.
+The big lesson in this level is the `file` command.
+We use the `file` command to check the file type of these files:
 ```bash
-ls
+file ./*
 ```
-However, running `ls` alone returns no result - because the contents are hidden.
-To reveal them, we use the `ls` command with the `-l` and `-a` flags:
+Here we use the asterisk `*` to refer all the files in the current directory.
+However we cannot simply use `*`, but `./*`, since all the files contains `-`at the beginning.
+This is similar to what we have done in the level 1 → level 2.
+After running the `file` command, we can see that only **-file07** is the **ASCII text**, which means its content is human-readable and is the password for the next level.
+We read the content of **-file07** by using:
 ```bash
-ls -la
+cat ./-file07
 ```
-- `-l`: lists contents in long format
-- `-a`: shows all files, including hidden ones
 
-We then see a file named **...Hiding-From-You** and read its contents:
-```bash
-cat ...Hiding-From-You
-```
-This gives us the password for the next level.
-
----
-This step isn't strictly necessary, but if we check the **.bashrc** file in the `$HOME` directory, we'll find this line:
-```bash
-alias ll='ls -alF'
-```
-So from now on, I personally find it better to use `ll` instead of `ls`, since it gives more useful information.
-I also prefer to use `ls` with the following extra flags:
-```bash
-ls -lah --group-directories-first
-```
-- `-h`: displays sizes in a human-readable format
-- `--group-directories-first`: shows directories before files
-
-I've even added this command as a personal alias in my local machine's **.bashrc** file:
-```bash
-alias lst='(ls -lah --group-directories-first)'
-```
 
 ## Summary
-- Learned how to use the `ls` command with useful flags.
-- Discovered **.bashrc** and the alias `ll`.
-- Made a personalized alias in the local **.bashrc** file.
-- Found the password for the next level.
