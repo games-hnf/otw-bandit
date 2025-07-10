@@ -10,9 +10,10 @@ The password for the next level is stored in a file called **spaces in this file
 
 ## Solution
 We learned how to handle a file with spaces in its filename.
+
 After logging in, we check the contents of the `$HOME` directory using:
 ```bash
-ll
+ls
 ```
 We then find a file named **spaces in this filename**.
 As the previous level, we use the `cat` command to read the file's contents.

@@ -11,9 +11,10 @@ The password for the next level is stored in a file called **-** located in the 
 
 ## Solution
 We learned how to deal with a file that has a dashed filename.
+
 More precisely, once logged in using the password obtained from the previous level, we check the contents of the `$HOME` directory with:
 ```bash
-ll
+ls
 ```
 We then see a file named **-**.
 We cannot simply run `cat -`, because the Linux kernel interprets the dash `-` as a flag, which in this case is incomplete or invalid.
