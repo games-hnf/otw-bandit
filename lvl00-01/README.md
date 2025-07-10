@@ -18,7 +18,7 @@ As levels get more challenging, detailed notes are useful to return to where you
 
 ## Solution
 This level teaches the basic usage of the `ls` command.  
-Once logged in using username **bandit0** and password **bandit0**, we check the contents of the home directory using:
+Once logged in using username **bandit0** and password **bandit0**, we check the contents of the `$HOME` directory using:
 ```bash
 ls
 ```
