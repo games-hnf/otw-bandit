@@ -5,6 +5,6 @@
 # Step 1: check the contents of the $HOME directory
 ll
 
-# Step 2: found 'data.txt', read the content of this file, but extract the entire line
-# that contains the string 'millionth'
+# Step 2: found 'data.txt', read the content of this file,
+# but extract the entire line that contains the string 'millionth'
 cat data.txt | grep 'millionth'
