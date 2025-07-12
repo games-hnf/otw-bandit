@@ -6,23 +6,27 @@ The password for the next level is stored in the file **data.txt** next to the w
 `man`, `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
 
 ## Solution
-This level teaches the basic usage of piping and the command `grep`.
-We use the structure `[command 1] | [command 2]` to take the result of `[command 1]` and pipe it into the `[command 2]`.
-And the command `grep` helps us grab the line which contains the given string.
+This level teaches the basic usage of **piping** and the `grep` command.
+We use the structure
+```bash
+[command 1] | [command 2]
+```
+to take the output of `[command 1]` and **pipe it as input** into `[command 2]`.
+The `grep` command helps us **search for lines that contain a specific string**.
 
-Firstly, we login as usual and check the `$HOME` directory using:
+First, we login as usual and check the `$HOME` directory by running:
 ```bash
 ll
 ```
-We then see a file named **data.txt**.
-As in the hint, the password for the next level is next to the word **millionth** in the file **data.txt**.
-Then, we use the `grep` command to grab the whole line, which contains the string **millionth**.
+We see a file named **data.txt**.
+According to the hint, the password for the next level is located next to the word **millionth** inside this file.
+So, we use `grep` to extract the entire line that contains that string:
 ```bash
 cat data.txt | grep 'millionth'
 ```
-Finally, we obtain the password for the next level.
+This returns the line we need, along with the password.
 
 ## Summary
-- Learned the basis of piping
-- Learned the basis of the `grep` command
-- Found the password for the next level
+- Learned the basics of **piping** with `|`
+- Learned the basics of the `grep` command
+- Successfully found the password for the next level
