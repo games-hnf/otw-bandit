@@ -20,6 +20,7 @@ We need to figure out how to use the `find` command to search through the entire
 - owned by user **bandit7**
 - owned by group **bandit6**
 - exactly **33 bytes** in size
+
 To achieve this, we use the following command:
 ```bash
 find / -user bandit7 -group bandit6 -size 33c
