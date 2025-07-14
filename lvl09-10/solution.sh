@@ -6,5 +6,5 @@
 ll
 
 # Step 2: found 'data.txt', extract all printable character sequences,
-# display only the lines containing '===='
+# and display only the lines containing '===='
 strings data.txt | grep '===='
