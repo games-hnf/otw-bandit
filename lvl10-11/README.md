@@ -18,6 +18,9 @@ We log in to the server using SSH and check the `$HOME` directory as usual:
 ll
 ```
 We find a file named **data.txt**.
+If we simply run `cat` on this file, we receive a string, but it is not similar to the passwords found in the previous levels.
+The received string is longer and ends with **==**.
+According to the hint, we know this is the signal of a converted string under the **base64** method.
 We decode this file by running:
 ```bash
 base64 -d data.txt
