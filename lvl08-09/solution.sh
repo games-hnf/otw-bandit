@@ -5,5 +5,5 @@
 # Step 1: check the contents of the $HOME directory
 ll
 
-# Step 2: found 'data.txt', group the repeated lines together and find out the unique line
+# Step 2: found 'data.txt', group the repeated lines together and display only the unique line(s)
 sort data.txt | uniq -u
