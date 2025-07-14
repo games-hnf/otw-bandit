@@ -6,27 +6,27 @@ The password for the next level is stored in the file **data.txt**, which contai
 `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
 
 ## Solution
-We learned about **Base64** in this level.
-It is a method to transform a string to another string, mainly from a meaningful string to a meaningless string.
-The method use firstly convert each character to a corresponding number using the Latin alphabetical order, then it is converted to the binary number, using 8-bit for each character.
-Now the whole series of digits is grouped differently into each 6-bit group.
-Then it'll be reversely converted back to the normal character in the Latin alphabet.
-This is not a strong method to encode, in fact the encoded data by the **base64** method can be very easily decoded.
+In this level, we learned about **Base64** - a method of encoding that transforms readable text into an encoded string.
+It typically converts a meaningful string into something that looks meaningless.  
+The process begins by converting each character into a number based on the Latin (ACSII) character set.
+Each character is represented in 8-bit binary.
+The entire sequence of bits is then regrouped into 6-bit chunks.
+These chunks are mapped to a set of 64 characters (A-Z, a-z, 0-9, +, /) to form the final **Base64** string.
+This encoding method is not secure - in fact, **Base64**-encoded data can be easily decoded.
 
-We log in to the server using SSH and check the `$HOME` directory as usual:
+We log in to the server via SSH and check the `$HOME` directory as usual:
 ```bash
 ll
 ```
 We find a file named **data.txt**.
-If we simply run `cat` on this file, we receive a string, but it is not similar to the passwords found in the previous levels.
-The received string is longer and ends with **==**.
-According to the hint, we know this is the signal of a converted string under the **base64** method.
-We decode this file by running:
+If we run `cat` on this file, we get a string - but it doesn't look like the passwords from previous levels.
+The string is longer and ends with **==**, which, according to the hint, suggests it is **Base64**-encoded.
+We decode it using:
 ```bash
 base64 -d data.txt
 ```
-and obtain the password for the next level.
+This reveals the password for the next level.
 
 ## Summary
-- Learned the basic of **base64**
-- Found the password for the next level
+- Learned the basics of **Base64** encoding
+- Decoded a file to find the password for the next level
