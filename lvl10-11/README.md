@@ -5,6 +5,9 @@ The password for the next level is stored in the file **data.txt**, which contai
 ## Commands you may need to solve this level
 `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
 
+## Helpful Reading Material
+[Base64 on Wikipedia](https://en.wikipedia.org/wiki/Base64)
+
 ## Solution
 In this level, we learned about **Base64** - a method of encoding that transforms readable text into an encoded string.
 It typically converts a meaningful string into something that looks meaningless.  
