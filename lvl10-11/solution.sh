@@ -5,6 +5,5 @@
 # Step 1: check the contents of the $HOME directory
 ll
 
-# Step 2: found 'data.txt', extract all printable character sequences,
-# and display only the lines containing '===='
-strings data.txt | grep '===='
+# Step 2: found 'data.txt', decode it using base64
+base64 -d data.txt
