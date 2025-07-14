@@ -12,7 +12,7 @@ The process begins by converting each character into a number based on the Latin
 Each character is represented in 8-bit binary.
 The entire sequence of bits is then regrouped into 6-bit chunks.
 These chunks are mapped to a set of 64 characters (A-Z, a-z, 0-9, +, /) to form the final **Base64** string.
-This encoding method is not secure - in fact, **Base64**-encoded data can be easily decoded.
+This encoding method is not secure - in fact, **Base64**-encoded data can be very easily decoded.
 
 We log in to the server via SSH and check the `$HOME` directory as usual:
 ```bash
@@ -20,7 +20,7 @@ ll
 ```
 We find a file named **data.txt**.
 If we run `cat` on this file, we get a string - but it doesn't look like the passwords from previous levels.
-The string is longer and ends with **==**, which, according to the hint, suggests it is **Base64**-encoded.
+This string is longer and ends with **==**, which, according to the hint, suggests it is **Base64**-encoded.
 We decode it using:
 ```bash
 base64 -d data.txt
