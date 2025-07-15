@@ -68,6 +68,7 @@ We continue this process iteratively:
 2. If it's a **gzip** file: rename to `.gz` and use `gunzip`.
 3. If it's a **bzip2** file: rename to `.bz2` and use `bunzip2`.
 4. If it's a **tar** archive: rename to `.tar` and use `tar -xf`.
+
 Eventually, we obtain an **ASCII text** file.
 We run `cat` on this file and retrieve the password for the next level.
 
