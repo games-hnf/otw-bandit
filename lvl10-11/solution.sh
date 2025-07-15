@@ -5,5 +5,5 @@
 # Step 1: check the contents of the $HOME directory
 ll
 
-# Step 2: found 'data.txt', decode it using base64
+# Step 2: found 'data.txt', decode it using Base64
 base64 -d data.txt

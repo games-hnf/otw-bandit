@@ -5,5 +5,5 @@
 # Step 1: check the contents of the $HOME directory
 ll
 
-# Step 2: found 'data.txt', decode it using base64
-base64 -d data.txt
+# Step 2: found 'data.txt', decode it based on ROT13 method
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
