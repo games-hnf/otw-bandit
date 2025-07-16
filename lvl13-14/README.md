@@ -9,25 +9,28 @@ The password for the next level is stored in **/etc/bandit_pass/bandit14 and can
 [SSH/OpenSSH/Keys](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
 ## Solution
-This level teaches us more about **SSH**.
+This level teaches us more about using **SSH**.
 
-We login to the server as usual and check the `$HOME` directory:
+We log in to the server as usual and check the `$HOME` directory:
 ```bash
 ll
 ```
 We find a file named **sshkey.private**.
-We learn from the man pages that we can use the `ssh` command with the `-i` flag applying on this private key file to login to the server of the next level under the username **bandit14**.
+From the man pages, we learn that we can use the `ssh` command with the `-i` flag to specify a private key file in order to log into the next level's server as user **bandit14**:
 ```bash
 ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 ```
-When we're asked: **Are you sure you want to continue connecting (yes/no/[fingerprint])?**, we answer **yes**.
-Once logged in, we follow the hint that, the password is stored in the file **/etc/bandit_pass/bandit14**.
-We read this file and obtain the password for the next level:
+When prompted with the message:
+> **Are you sure you want to continue connecting (yes/no/[fingerprint])?
+> We type `yes`.
+Once logged in, we follow the hint stating that the password is stored in the file **/etc/bandit_pass/bandit14**.
+We read the file using:
 ```bash
 cat /etc/bandit_pass/bandit14
 ```
+And retrieve the password for the next level.
 
 ## Summary
 - Learned more about **SSH**
-- Practiced login using the private key file
-- Found the password for the next level
+- Practiced logging in using a private key file
+- Retrieved the password for the next level
