@@ -21,8 +21,9 @@ From the man pages, we learn that we can use the `ssh` command with the `-i` fla
 ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 ```
 When prompted with the message:
-> **Are you sure you want to continue connecting (yes/no/[fingerprint])?
+> **Are you sure you want to continue connecting (yes/no/[fingerprint])?**  
 > We type `yes`.
+
 Once logged in, we follow the hint stating that the password is stored in the file **/etc/bandit_pass/bandit14**.
 We read the file using:
 ```bash
