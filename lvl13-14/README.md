@@ -20,6 +20,7 @@ We learn from the man pages that we can use the `ssh` command with the `-i` flag
 ```bash
 ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 ```
+When we're asked: **Are you sure you want to continue connecting (yes/no/[fingerprint])?**, we answer **yes**.
 Once logged in, we follow the hint that, the password is stored in the file **/etc/bandit_pass/bandit14**.
 We read this file and obtain the password for the next level:
 ```bash
